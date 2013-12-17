@@ -1,0 +1,11 @@
+<launch>
+  <include file="/etc/ros/groovy/openni_head.launch"/>
+  <include file="$(find mapmaking)/launch/octomap_mapping.launch"/>
+
+ <!-- <rosparam command="load" ns="robot_description_planning" file="$(find 3d_nav_executive)/config/pr2_planning_description.yaml" /> -->
+
+    <rosparam command="load" ns="robot_description_planning" file="$(find mapmaking)/config/pr2_planning_description.yaml" />
+
+ <node name="environment_server" pkg="planning_environment" type="environment_server" />
+
+</launch>
