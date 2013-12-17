@@ -1,6 +1,6 @@
 <launch>
-  
-  <node pkg="map_server" name="sushi_map" type="map_server" args="$(find mapmaking)/maps/map.yaml" respawn="true" >
+  <arg name="map_name"/>  
+  <node pkg="map_server" name="sushi_map" type="map_server" args="$(find mapmaking)/$(arg map_name)" respawn="true" >
     <remap from="map" to="map_server_map"/>
   </node>
 
